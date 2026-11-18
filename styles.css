@@ -300,6 +300,7 @@ html:not(.js) #loader{display:none}
 .card-in p{color:var(--tinta-suave);font-size:.98rem;max-width:26ch}
 .micro{margin-top:auto;font:700 .78rem/1.4 var(--sans);letter-spacing:.05em;color:var(--bronce-txt);padding-top:12px;border-top:1px solid rgba(31,92,94,.12);transition:color .3s,letter-spacing .3s}
 .micro:hover{color:var(--teal);letter-spacing:.09em}
+.card-in p.cita{font:italic 500 .88rem/1.45 var(--serif);color:var(--bronce-txt);margin-top:-4px}
 .dest .card-in{background:var(--teal-900);color:var(--claro);border-color:var(--oro)}
 .dest .card-in p{color:var(--claro-2)}
 .dest .ico{stroke:var(--oro)}
@@ -313,6 +314,17 @@ html:not(.js) #loader{display:none}
 .serv-barra{display:none}
 
 /* ---------- S6 · Pisada ---------- */
+/* ---------- Qué atendemos (patologías) ---------- */
+.atiende{padding-block:clamp(120px,14vw,200px);overflow:clip;background:linear-gradient(180deg,var(--teal-900),var(--teal-800) 50%,var(--teal-900))}
+.atn-grid{position:relative;z-index:2;display:grid;gap:44px}
+.atn-txt .btn{margin-top:28px}
+.cond{list-style:none;display:grid;gap:10px;grid-template-columns:1fr}
+.cond li{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2px;padding:14px 18px 14px 44px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);font:600 .95rem/1.35 var(--sans);color:var(--claro);transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.cond li::before{content:"";position:absolute;left:18px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:linear-gradient(135deg,var(--bronce),var(--oro))}
+.cond li:hover{background:rgba(226,196,142,.1);border-color:rgba(226,196,142,.45);transform:translateX(4px)}
+.cond small{font:500 .78rem/1.4 var(--sans);color:var(--claro-2)}
+@media (min-width:600px){.cond{grid-template-columns:1fr 1fr}}
+
 .pisada{background:var(--marfil-2)}
 .pis-grid{display:grid;gap:56px}
 .pis-vis{position:relative;margin-bottom:8%}
@@ -536,6 +548,8 @@ html.js .pie-columna:not(.in) path{stroke-dashoffset:1}
    ≥ 900 · Layouts de 2 columnas + secciones fijas (sticky)
    ===================================================================== */
 @media (min-width:900px){
+  .atn-grid{grid-template-columns:5fr 7fr;gap:0 56px;align-items:start}
+  .atn-txt{position:sticky;top:110px}
   .pis-grid{grid-template-columns:repeat(12,1fr);align-items:center;gap:0 24px}
   .pis-vis{grid-column:1/8;margin-bottom:6%}
   .pis-txt{grid-column:8/13}

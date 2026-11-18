@@ -5,3 +5,6 @@ node_modules
 *.log
 Thumbs.db
 .DS_Store
+
+# Material original del cliente: no se despliega
+nueva

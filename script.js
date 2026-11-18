@@ -643,6 +643,7 @@ const WHATSAPP_NUMERO = "5215561605834";
   let lastSy = -999, prevFrameSy = 0, skew = 0, hdrLast = 0;
   const cinta = $('#especialidades'), cap = $('#capsula'), aguja = $('#aguja');
   const servNum = $('#servNum'), servBarra = $('#servBarra');
+  const nServ = $$('.card-s:not(.fin)').length || 1; /* cuenta las tarjetas de servicio (sin la de cierre) */
 
   function escroll() {
     const prefiereMov = !reduce.matches;
@@ -670,7 +671,7 @@ const WHATSAPP_NUMERO = "5215561605834";
       const p = clamp((sy - M.serv.top) / Math.max(1, M.serv.h - vh));
       sv(pistaServ, '--tx', (-p * M.servTrack).toFixed(1) + 'px');
       sv(servBarra, '--sp', p.toFixed(4));
-      if (servNum) { const n = '0' + clamp(Math.floor(p * 7) + 1, 1, 7); if (servNum.textContent !== n) servNum.textContent = n; }
+      if (servNum) { const n = '0' + clamp(Math.floor(p * nServ) + 1, 1, nServ); if (servNum.textContent !== n) servNum.textContent = n; }
     }
     /* pisada: la imagen se abre en grande + parallax inverso */
     if (prefiereMov) {

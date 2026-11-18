@@ -7,3 +7,6 @@ Thumbs.db
 .DS_Store
 *.log
 .cache/
+
+# Material original del cliente (constancias con foto/QR/folios): no se sube ni se publica
+nueva/
